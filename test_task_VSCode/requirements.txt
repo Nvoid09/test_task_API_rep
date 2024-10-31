@@ -1,0 +1,6 @@
+fastapi==0.115.4
+pandas==1.5.3
+pydantic==2.9.2
+Requests==2.32.3
+uvicorn
+python-multipart
