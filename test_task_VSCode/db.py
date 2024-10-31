@@ -51,7 +51,6 @@ def save_to_db(json_list: list):
                 """,
                 (el_dict["saddr"], el_dict["avgDur"])
             )
-            print("INSERTED")
         else:
             cursor.execute(
                 """
@@ -59,6 +58,5 @@ def save_to_db(json_list: list):
                 """,
                 (el_dict["avgDur"], el_dict["saddr"])
             )
-            print("UPDATED")
     conn.commit()
     conn.close()
