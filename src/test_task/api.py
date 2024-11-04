@@ -3,7 +3,7 @@ from pydantic import BaseModel
 import pandas as pd
 from io import StringIO
 from typing import List
-import db
+from . import db
 
 
 app = FastAPI()
@@ -30,9 +30,9 @@ async def process_csv(file: UploadFile = File(...)):
     Endpoint to receive form-data with csv-file and return JSON.
     Saves result to database.
     Input:
-        Csv-file, loaded through swagger 
+        Csv-file, loaded through swagger
     Output:
-        JSON with info average "dur" for every source 
+        JSON with info average "dur" for every source
     """
     if file.content_type != "text/csv":
         raise HTTPException(
